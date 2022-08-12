@@ -1,0 +1,4 @@
+for tailwind styles, order styles such as this
+1. sizing
+2. positioning
+3. extra fluff
