@@ -27,11 +27,6 @@ const insertionSort = {
     icon: "🔍"
 };
 
-const mergeSort = {
-    name: "Merge Sort",
-    icon: "👑"
-};
-
 const quickSort = {
     name: "QuickSort",
     icon: "⚡"
@@ -42,6 +37,5 @@ export const algosData: IAlgosData = {
     selectionSort,
     bubbleSort,
     insertionSort,
-    mergeSort,
     quickSort
 };
