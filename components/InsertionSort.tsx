@@ -27,7 +27,7 @@ const InsertionSort = ({ children, swap, arr, setComputerSelections, setComputer
         }, 200);
 
         return () => clearTimeout(delay);
-    }, [mainIndex, setMainIndex, secondIndex, setSecondIndex, arr, setComputerDone, setComputerSelections])
+    }, [mainIndex, setMainIndex, secondIndex, setSecondIndex, arr, setComputerDone, setComputerSelections, swap])
     
     return children;
 };

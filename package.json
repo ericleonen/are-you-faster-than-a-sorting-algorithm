@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && next export && git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "next": "12.2.4",
@@ -17,6 +18,8 @@
     "@types/node": "^18.7.1",
     "@types/react": "^18.0.17",
     "autoprefixer": "^10.4.8",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-define": "^2.0.1",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
     "postcss": "^8.4.16",

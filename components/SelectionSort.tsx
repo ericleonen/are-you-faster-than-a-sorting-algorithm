@@ -33,7 +33,7 @@ const SelectionSort = ({ children, swap, arr, setComputerSelections, setComputer
         }, 200);
 
         return () => clearTimeout(delay);
-    }, [currentIndex, setCurrentIndex, minIndex, setMinIndex, minFinderIndex, setMinFinderIndex, arr, setComputerDone, setComputerSelections]);
+    }, [currentIndex, setCurrentIndex, minIndex, setMinIndex, minFinderIndex, setMinFinderIndex, arr, setComputerDone, setComputerSelections, swap]);
     
     return children;
 };
