@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { algosData } from "../algos/algosData";
 import { generateRandomArray, isSorted } from "../algos/array";
 import ArrayBar from "../components/ArrayBar";
+import GameOverModal from "../components/GameOverModal";
 import PlayBtn from "../components/PlayBtn";
 import PlayerSection from "../components/PlayerSection";
 import PlayerTitle from "../components/PlayerTitle";
@@ -25,6 +26,8 @@ const Game = () => {
     const [playerSelections, setPlayerSelections] = useState([]);
 
     const [computerDone, setComputerDone] = useState(false);
+
+    const [winner, setWinner] = useState("");
 
     const addPlayerSelection = (index) => {
         setPlayerSelections(playerSelections => {
@@ -56,12 +59,14 @@ const Game = () => {
                     if (arr[0] <= computerArray.length) {
                         return [arr[0] + 1];
                     }
-                    
+
+                    clearInterval(interval);
+                    if (winner.length === 0) {
+                        setWinner("computer");
+                    }
                     return [];
                 });
             }, 200);
-
-            return () => clearInterval(interval);
         }
     }, [computerDone]);
 
@@ -74,16 +79,21 @@ const Game = () => {
                         return [arr[0] + 1];
                     }
 
+                    clearInterval(interval);
+                    if (winner.length === 0) {
+                        setWinner("player");
+                    }
                     return [];
                 });
             }, 200);
-
-            return () => clearInterval(interval);
         }
     }, [playerArray]);
 
     return (
         <div className="relative h-screen w-screen">
+            {
+                winner.length > 0 && <GameOverModal algoName={algosData[algo].name} winner={winner}/>
+            }
             <PlayerSection>
                 <PlayerTitle 
                     icon={algosData[algo]?.icon}
