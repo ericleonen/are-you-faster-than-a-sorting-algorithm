@@ -8,9 +8,9 @@ const BubbleSort = ({ children, swap, arr, setComputerSelections, setComputerDon
 
     useEffect(() => {
         const delay = setTimeout(() => {
-            setComputerSelections([index1, index2]);
-
             if (index1 < arr.length - 1) {
+                setComputerSelections([index1, index2]);
+
                 if (index2 >= arr.length - 1 - index1) {
                     setIndex1(index => index + 1);
                     setIndex2(0);

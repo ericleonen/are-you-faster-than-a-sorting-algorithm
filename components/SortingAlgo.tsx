@@ -1,5 +1,7 @@
+import BogoSort from "./BogoSort";
 import BubbleSort from "./BubbleSort";
 import InsertionSort from "./InsertionSort";
+import QuickSort from "./QuickSort";
 import SelectionSort from "./SelectionSort";
 
 export interface SortingAlgoProps {
@@ -13,7 +15,7 @@ export interface SortingAlgoProps {
 
 const SortingAlgo = (props: SortingAlgoProps) => {
     if (props.algo === "bogoSort") {
-        return <></>;
+        return <BogoSort {...props} />;
     }
     else if (props.algo === "selectionSort") {
         return <SelectionSort {...props} />;
@@ -23,6 +25,9 @@ const SortingAlgo = (props: SortingAlgoProps) => {
     }
     else if (props.algo === "insertionSort") {
         return <InsertionSort {...props} />
+    }
+    else if (props.algo === "quickSort") {
+        return <QuickSort {...props} />
     }
 };
 
