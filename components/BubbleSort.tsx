@@ -30,7 +30,7 @@ const BubbleSort = ({ children, swap, arr, setComputerSelections, setComputerDon
         }, 200);
 
         return () => clearTimeout(delay);
-    }, [index1, setIndex1, index2, setIndex2, arr]);
+    }, [index1, setIndex1, index2, setIndex2, arr, setComputerDone, setComputerSelections, swap]);
     
     return children;
 };

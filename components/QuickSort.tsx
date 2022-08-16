@@ -66,7 +66,7 @@ const QuickSort = ({ children, swap, arr, setComputerSelections, setComputerDone
         }, 200);
 
         return () => clearTimeout(delay);
-    }, [intervalStack, setIntervalStack, pivot, setPivot, left, setLeft, right, setRight, arr]);
+    }, [intervalStack, setIntervalStack, pivot, setPivot, left, setLeft, right, setRight, arr, setComputerDone, setComputerSelections]);
     
     return children;
 };

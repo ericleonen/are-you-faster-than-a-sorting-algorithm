@@ -50,7 +50,7 @@ const Game = () => {
             swapArrayIndexes(playerArray, setPlayerArray, playerSelections[0], playerSelections[1]);
             setPlayerSelections([]);
         }
-    }, [playerSelections]);
+    }, [playerSelections, playerArray]);
 
     useEffect(() => {
         if (computerDone) {
@@ -68,7 +68,7 @@ const Game = () => {
                 });
             }, 200);
         }
-    }, [computerDone]);
+    }, [computerDone, computerArray, winner]);
 
     useEffect(() => {
         if (isSorted(playerArray)) {
@@ -87,7 +87,7 @@ const Game = () => {
                 });
             }, 200);
         }
-    }, [playerArray]);
+    }, [playerArray, winner]);
 
     return (
         <div className="relative h-screen w-screen">
